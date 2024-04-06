@@ -288,7 +288,7 @@ for i in locations:
     plt.title(f'Frquency Distribution of 1BHK,2BHK,3BHK houses in {i}')
     plt.legend(['1 BHK','2 BHK','3 BHK'], loc="best")
     plt.tight_layout()
-    plt.savefig(f'bhk_{i}.png')
+    plt.savefig(f'BHK_{i}.png')
     plt.clf()
 
 '''Bathroom'''
@@ -324,7 +324,7 @@ for i in locations:
     plt.title(f'Number of parking slots in houses in {i}')
     plt.legend(['No Parking Slot','1 Parking Slot','2 Parking Slots'], loc="best")
     plt.tight_layout()
-    plt.savefig(f'ParkingSlot_{i}.png')
+    plt.savefig(f'ParkingSlots_{i}.png')
     plt.clf()
 
 '''Furnishing'''

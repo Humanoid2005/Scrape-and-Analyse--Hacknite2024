@@ -82,10 +82,21 @@ def scrape_data(url):
         builderinfo1 = i.find("div",class_ = "mb-srp__card__developer")
         if(builderinfo1==None):
             builderinfo2 = i.find("div",class_ = "mb-srp__card__society")
-            builder_link = builderinfo2.a['href']
-            builder = builderinfo2.a.text
+            if(builderinfo2==None):
+                y = i.find("div",class_ = "mb-srp__card__info mb-srp__card__info-withoutburger")
+                z = y.find("div",class_ = "mb-srp__card__society")
+                if(z==None):
+                    builder_link = url
+                    builder = "Benaka Enterprise"
+                else:
+                    builder_link = z.a['href']
+                    builder = z.a.text
+            else:
+                builder_link = builderinfo2.a['href']
+                builder = builderinfo2.a.text
             details['Builder'] = builder
             details['BuilderLink'] = builder_link
+        
         else:
             builder = builderinfo1.a.span.text
             builder_link = builderinfo1.a['href']
@@ -161,10 +172,14 @@ def scrape_data(url):
         
     return house_list
 
-url = "https://www.magicbricks.com/property-for-sale/residential-real-estate?bedroom=2,3&proptype=Multistorey-Apartment,Builder-Floor-Apartment,Penthouse,Studio-Apartment,Residential-House,Villa&cityName=Bangalore"
-parameters = set()
-houseL = scrape_data(url)
+url1 = "https://www.magicbricks.com/property-for-sale/residential-real-estate?bedroom=1&proptype=Multistorey-Apartment,Builder-Floor-Apartment,Penthouse,Studio-Apartment,Residential-House,Villa&cityName=Bangalore"
+houseL = scrape_data(url1)
+url2 = "https://www.magicbricks.com/property-for-sale/residential-real-estate?bedroom=2&proptype=Multistorey-Apartment,Builder-Floor-Apartment,Penthouse,Studio-Apartment,Residential-House,Villa&cityName=Bangalore"
+houseL = houseL + scrape_data(url2)
+url3 = "https://www.magicbricks.com/property-for-sale/residential-real-estate?bedroom=3&proptype=Multistorey-Apartment,Builder-Floor-Apartment,Penthouse,Studio-Apartment,Residential-House,Villa&cityName=Bangalore"
+houseL = houseL + scrape_data(url3)
 dictionary = {}
+parameters = set()
 
 for i in houseL:
     for j in i:

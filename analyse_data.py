@@ -8,7 +8,6 @@ from matplotlib.ticker import MultipleLocator, FuncFormatter
 from matplotlib.cm import get_cmap
 import time
 
-
 def calculate_distance(location1,location2):
     def distance_location(location1,location2):
         geolocator = Nominatim(user_agent="my_app")

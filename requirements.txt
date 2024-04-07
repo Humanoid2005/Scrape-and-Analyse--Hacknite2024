@@ -1,9 +1,0 @@
-requests
-bs4
-selenium
-pandas
-matplotlib
-geopy
-streamlit
-graphviz
-Pillow

@@ -17,6 +17,7 @@ b> Based on some external information : Distance of house location from prominen
 (*Quality of environment has been compared based on the number of parks in the locality. This is due to the lack of data on other factors such as number of trees,etc. Since greater number of parks would imply more trees in general scenarios.*)
 I have also collected additional data(*builder links,more information on the house*) using live scraping with the help of selenium.
 The real estate buildings for sale data has also been depicted as a dataframe(*table*) for people to go through incase they want further information.(*Live Scraping has been used to get the link field links in the dataframe*)
+<br></br>
 **Additional Function**: I have also designed a image scraper which gets us the image by web-scrapping a image website. This image scraper has multiple apllications and in my project it is just a functionality for the website user to play with in case they are ~~tired of~~  done with analysis(*Image Scraper is built as a side utility of this website.*)
 All the images on the web page(*analysis plots and image scraper images*) can be downloaded using the download button on the website.
 

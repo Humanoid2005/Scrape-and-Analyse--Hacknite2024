@@ -1,6 +1,6 @@
 # **Scrape-and-Analyse--Hacknite2024**
-
-## **Track **: Data Analytics
+## **Team Humanoid**
+## **Track**: Data Analytics
 ## **Contributors** : Sriram Srikanth (IMT2023115)
 
 ## **Problem Statement:**
@@ -16,7 +16,9 @@ b> Based on some external information : Distance of house location from prominen
                                         Quality of nature and environment in the location of the house
 (*Quality of environment has been compared based on the number of parks in the locality. This is due to the lack of data on other factors such as number of trees,etc. Since greater number of parks would imply more trees in general scenarios.*)
 I have also collected additional data(*builder links,more information on the house*) using live scraping with the help of selenium.
-I have also designed a image scraper which gets us the image by web-scrapping a image website. (*This is built as a side utility of this website.*)
+The real estate buildings for sale data has also been depicted as a dataframe(*table*) for people to go through incase they want further information.(*Live Scraping has been used to get the link field links in the dataframe*)
+**Additional Function**I have also designed a image scraper which gets us the image by web-scrapping a image website. This image scraper has multiple apllications and in my project it is just a functionality for the website user to play with in case they are ~~tired of~~  done with analysis(*Image Scraper is built as a side utility of this website.*)
+All the images on the web page(*analysis plots and image scraper images*) can be downloaded using the download button on the website.
 
 ## **Tech Stack**
 ### **Python Libraries Used** :
@@ -40,12 +42,12 @@ I have also designed a image scraper which gets us the image by web-scrapping a 
 **NOTE :** The 3 python files must be run in the same order in which they have been explained. This process needs to done only once and then later everything can be viewed on the deployed webpage. 
 
 ## **How to run ?**
+1. Download the entire github repository
+2. Open command prompt/terminal in the downloaded github repository folder
+3. type - streamlit run website_builder.py
 
 
-## **Deployment**
-
-
-## **Applications **
+## **Applications**
 It can help homebuyers choose the optimal house based on their requirements, from a large pool of houses put up for sale on real estate websites.
 
 ## **Further Improvements**

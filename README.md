@@ -46,6 +46,7 @@ All the images on the web page(*analysis plots and image scraper images*) can be
 1. Download the entire github repository
 2. Open command prompt/terminal in the downloaded github repository folder
 3. type - streamlit run website_builder.py
+   <br></br>
 **Please go through the website and all its functionalities using the steps given above**
 
 

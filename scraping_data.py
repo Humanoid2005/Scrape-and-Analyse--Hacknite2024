@@ -192,5 +192,11 @@ for i in parameters:
         data.append(j.get(i,'Not Known'))
     dictionary[i] = data
 
+print(dictionary)
+print()
+print()
 df = pd.DataFrame(dictionary)
+print(df)
+print()
+print()
 df.to_csv('data.csv')

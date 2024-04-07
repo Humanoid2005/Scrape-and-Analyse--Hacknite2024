@@ -38,13 +38,14 @@ All the images on the web page(*analysis plots and image scraper images*) can be
 1. This project initially contains 3 python files, 1 csv file(*BBMP Parks data csv file*), chromedriver files(*for selenium*).
 2.  **'scraping_data.py'** file scrapes data from the websites, stores them in a pandas dataframe and then creates a 'data.csv' file from that dataframe.
 3. **'analyse_data.py'** file converts 'data.csv' file into a dataframe, cleanses and collects necessary data from it and stores the cleansed data in 'data1.csv' file. It then uses this cleansed data to plot charts with the help of matlplotlib.These charts are downloaded as .png files and stored in the same directory.
-4. The .png files and 'data1.csv' file is used by the **'website_builder.py'** file to create the website which is then deployed.
-**NOTE :** The 3 python files must be run in the same order in which they have been explained. This process needs to done only once and then later everything can be viewed on the deployed webpage. 
+4. The .png files and 'data1.csv' file is used by the **'website_builder.py'** file to create the website.
+**NOTE :** The 3 python files must be run in the same order in which they have been explained. This process needs to done only once and then later everything can be viewed on the webpage. However this need not be done since all the contents created after these files are ran are already present in the github repository.
 
 ## **How to run ?**
 1. Download the entire github repository
 2. Open command prompt/terminal in the downloaded github repository folder
 3. type - streamlit run website_builder.py
+**Please go through the website and all its functionalities using the steps given above**
 
 
 ## **Applications**

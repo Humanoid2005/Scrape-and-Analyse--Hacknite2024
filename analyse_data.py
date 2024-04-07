@@ -8,7 +8,10 @@ from matplotlib.ticker import MultipleLocator, FuncFormatter
 from matplotlib.cm import get_cmap
 import time
 
+
 def calculate_distance(location1,location2):
+    if((location1==location2) or (location1 in location2) or (location2 in location1)):
+        return 0
     def distance_location(location1,location2):
         geolocator = Nominatim(user_agent="my_app")
         location1 = location1 + ", Bangalore, Karnataka"
@@ -192,40 +195,40 @@ for i in locations:
 '''Average Cost for locations'''
 
 #1BHK
-plt.figure(figsize=(12, 6))
-bar_width = 0.2
+plt.figure(figsize=(25, 6))
+bar_width = 0.35
 bar_positions = [i + bar_width / 2 for i in range(len(aloc1))]
 plt.bar(bar_positions,AC1, color='purple', width=bar_width, label="1 BHK (₹)")
-plt.xlabel("Locations")
+plt.xlabel("Locations",labelpad = -10)
 plt.ylabel("Cost(₹) in crores")
 plt.title("Average Total Cost of buying 1 BHK Houses in Bangalore")
-plt.xticks(bar_positions, aloc1, rotation=15, ha='center',fontsize=5)
+plt.xticks(bar_positions, aloc1, rotation=15, ha='center',fontsize=7)
 plt.legend()
 plt.savefig('AC1.png')
 
 
 #2BHK
-plt.figure(figsize=(12, 6))
-bar_width = 0.2
+plt.figure(figsize=(25, 6))
+bar_width = 0.35
 bar_positions = [i + bar_width / 2 for i in range(len(aloc2))]
 plt.bar(bar_positions,AC2, color='orange', width=bar_width, label="2 BHK (₹)")
-plt.xlabel("Locations")
+plt.xlabel("Locations",labelpad = -10)
 plt.ylabel("Cost(₹) in crores")
 plt.title("Average Total Cost of buying 2 BHK Houses in Bangalore")
-plt.xticks(bar_positions, aloc2, rotation=15, ha='center',fontsize=5)
+plt.xticks(bar_positions, aloc2, rotation=15, ha='center',fontsize=7)
 plt.legend()
 plt.savefig('AC2.png')
 
 
 #3BHK
-plt.figure(figsize=(12, 6))
-bar_width = 0.2
+plt.figure(figsize=(25, 6))
+bar_width = 0.35
 bar_positions = [i + bar_width / 2 for i in range(len(aloc3))]
 plt.bar(bar_positions,AC3, color='blue', width=bar_width, label="3 BHK (₹)")
-plt.xlabel("Locations")
+plt.xlabel("Locations",labelpad = -10)
 plt.ylabel("Cost(₹) in crores")
 plt.title("Average Total Cost of buying 3 BHK Houses in Bangalore")
-plt.xticks(bar_positions, aloc3, rotation=15, ha='center',fontsize=5)
+plt.xticks(bar_positions, aloc3, rotation=15, ha='center',fontsize=7)
 plt.legend()
 plt.savefig('AC3.png')
 
@@ -233,39 +236,39 @@ plt.savefig('AC3.png')
 '''Median Cost for Locations'''
 
 #1BHK
-plt.figure(figsize=(12, 6))
-bar_width = 0.2
+plt.figure(figsize=(25, 6))
+bar_width = 0.35
 bar_positions = [i + bar_width / 2 for i in range(len(aloc1))]
 plt.bar(bar_positions,MC1, color='magenta', width=bar_width, label="1 BHK (₹)")
-plt.xlabel("Locations")
+plt.xlabel("Locations",labelpad = -10)
 plt.ylabel("Cost(₹) in crores")
 plt.title("Median Total Cost of buying 1 BHK Houses in Bangalore")
-plt.xticks(bar_positions, aloc1, rotation=15, ha='center',fontsize=5)
+plt.xticks(bar_positions, aloc1, rotation=15, ha='center',fontsize=7)
 plt.legend()
 plt.savefig('MC1.png')
 
 
 #2BHK
-plt.figure(figsize=(12, 6))
-bar_width = 0.2
+plt.figure(figsize=(25, 6))
+bar_width = 0.35
 bar_positions = [i + bar_width / 2 for i in range(len(aloc2))]
 plt.bar(bar_positions,MC2, color='green', width=bar_width, label="2 BHK (₹)")
-plt.xlabel("Locations")
+plt.xlabel("Locations",labelpad = -10)
 plt.ylabel("Cost(₹) in crores")
 plt.title("Median Total Cost of buying 2 BHK Houses in Bangalore")
-plt.xticks(bar_positions, aloc2, rotation=15, ha='center',fontsize=5)
+plt.xticks(bar_positions, aloc2, rotation=15, ha='center',fontsize=7)
 plt.legend()
 plt.savefig('MC2.png')
 
 #3BHK
-plt.figure(figsize=(12, 6))
-bar_width = 0.2
+plt.figure(figsize=(25, 6))
+bar_width = 0.35
 bar_positions = [i + bar_width / 2 for i in range(len(aloc3))]
 plt.bar(bar_positions,MC3, color='cyan', width=bar_width, label="3 BHK (₹)")
-plt.xlabel("Locations")
+plt.xlabel("Locations",labelpad = -10)
 plt.ylabel("Cost(₹) in crores")
 plt.title("Median Total Cost of buying 3 BHK Houses in Bangalore")
-plt.xticks(bar_positions, aloc3, rotation=15, ha='center',fontsize=5)
+plt.xticks(bar_positions, aloc3, rotation=15, ha='center',fontsize=7)
 plt.legend()
 plt.savefig('MC3.png')
 plt.clf()
@@ -340,14 +343,14 @@ for i in locations:
 
 
 '''Super Area'''
-plt.figure(figsize=(12, 6))
+plt.figure(figsize=(25, 6))
 box = plt.boxplot(s_area,vert=1,patch_artist=True,notch=True,labels=locations)
 bar_width = 0.35
 bar_positions = [i + bar_width for i in range(len(locations))]
 colors = ["pink","violet","indigo","blue","cyan","green","lightgreen","yellow","orange","red"]
 for patch,index in zip(box['boxes'],list(range(len(locations)))):
     patch.set_facecolor(colors[index%len(colors)])
-plt.xticks(bar_positions,locations_spaced,rotation=60,ha="center",fontsize=5)
+plt.xticks(bar_positions,locations_spaced,rotation=15,ha="center",fontsize=5)
 plt.xlabel("Locations")
 plt.ylabel("Super Area(in ft)")
 plt.grid(True)
@@ -361,9 +364,9 @@ for i in locations:
     park_data.append(parks[i])
 
 plt.figure(figsize=(25, 6))
-bar_width = 0.2
+bar_width = 0.45
 bar_positions = [i + bar_width / 2 for i in range(len(locations))]
-plt.bar(bar_positions,park_data, color='lightgreen', width=bar_width, label="Parks")
+plt.bar(bar_positions,park_data, color='olivegreen', width=bar_width, label="Parks")
 plt.xlabel("Locations")
 plt.ylabel("Number of parks")
 plt.title("Analysing Environment of location based on number of parks")
@@ -371,6 +374,7 @@ plt.xticks(bar_positions,locations_spaced, rotation=15, ha='center',fontsize=6)
 plt.legend()
 plt.savefig('parks.png')
 plt.clf()
+print('park done')
 
 #DISTANCE FROM CENTRAL LOCATIONS IN BANGALORE
 Mdistances = []
@@ -384,12 +388,12 @@ for i in locations:
 Edistances = []
 for i in locations:
     Me = calculate_distance(i,"Electronic City")
-    if(i!="Electronic City" and Me==0):
+    if((i!="Electronic City") and (i not in "Electronic City") and ("Electronic City" not in i) and (Me==0)):
         Edistances.append(10)
     else:
         Edistances.append(Me)
 
-plt.figure(figsize=(12, 6))
+plt.figure(figsize=(25, 6))
 bar_width = 0.35
 index = range(len(locations))
 plt.bar(index,Mdistances, bar_width, label="Distance from Majestic, Bangalore", color='indigo')
@@ -398,7 +402,7 @@ plt.xlabel("Locations")
 plt.ylabel("Distances")
 plt.title("Distances of the locations from important locations in Bangalore")
 plt.legend()
-plt.xticks([i + bar_width / 2 for i in index],locations_spaced,rotation=15,ha="center",fontsize=4)
+plt.xticks([i + bar_width / 2 for i in index],locations_spaced,rotation=15,ha="center",fontsize=7)
 plt.tight_layout()
 plt.subplots_adjust(bottom=0.2)
 plt.savefig("Distances.png")
